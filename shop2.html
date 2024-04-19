@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womazing</title>
+    <link rel="stylesheet" href="./css/shop_style.css">
+</head>
+<body>
+    <!--Header-->
+    <header class="header">
+        <div class="wrapper">
+            <div class="header_wrapper">
+                <div class="header_logo">
+                    <a href="/" class="header_logo-link">
+                        <img src="./img/svg/logo.svg" alt="Home" class="header_logo-pic">
+                    </a>
+                </div>
+                <nav class="header_nav">
+                    <ul class="header_list">
+                        <li class="header_item">
+                            <a href="index.html" class="header_link">Главная</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="shop.html" class="second_header_link">Магазин</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="about_brand.html" class="header_link">О бренде</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="contacts.html" class="header_link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="phone_logo">
+                    <a href="#zatemnenie" class="phone_logo-link">
+                        <img src="./img/svg/phone.svg" alt="Shop" class="phone_logo-pic">
+                    </a>
+                    +7 (495) 823-54-12
+                </div>
+                <div class="shop_logo">
+                    <a href="#!" class="shop_logo-link">
+                        <img src="./img/svg/bag.svg" alt="Shop" class="bag_logo-pic">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Main shop-->
+    <div class="shop_main">
+        <div class="title">
+            <h1 class="shop_title">
+                Магазин
+            </h1>
+            <p class="first_subtitle">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="current">Магазин</li>
+                  </ul>
+            </p>
+        </div>
+        <div class="filter_bar2">
+            <input type="radio" id="Все" name="categories" value="Все" checked>
+            <input type="radio" id="Пальто" name="categories" value="Пальто">
+            <input type="radio" id="Свитшоты" name="categories" value="Свитшоты">
+            <input type="radio" id="Кардиганы" name="categories" value="Кардиганы">
+            <input type="radio" id="Толстовки" name="categories" value="Толстовки">
+            
+            <ol class="filters">
+                <li>
+                <label for="Все">Все</label>
+                </li>
+                <li>
+                <label for="Пальто">Пальто</label>
+                </li>
+                <li>
+                <label for="Свитшоты">Свитшоты</label>
+                </li>
+                <li>
+                <label for="Кардиганы">Кардиганы</label>
+                </li>
+                <li>
+                <label for="Толстовки">Толстовки</label>
+                </li>
+            </ol>
+            <p id="counter2"></p>
+            <ol class="posts" data-category="first">
+                <li class="post" data-category="Пальто">
+                    <div class="test_pic2">
+                        <img src="img/newcol1.png" alt="photo1" class="picture">
+                        <div class="button">
+                            <a href="first_shop_card.html">
+                                <img src="./img/svg/open_shop_button3.svg" alt="btn3" class="open_shop_button3">
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="card-title">
+                        Футболка USA
+                    </h3>
+                    <p class="card-price">
+                        $129
+                    </p>
+                </li>
+                <li class="post" data-category="Свитшоты">
+                    <div class="test_pic2">
+                        <img src="img/newcol2.png" alt="photo1" class="picture">
+                        <div class="button">
+                            <a href="second_shop_card.html">
+                                <img src="./img/svg/open_shop_button3.svg" alt="btn3" class="open_shop_button3">
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="card-title">
+                        Купальник GLOW
+                    </h3>
+                    <p class="card-price">$129</p>
+                </li>
+                <li class="post" data-category="Кардиганы">
+                    <div class="test_pic2">
+                        <img src="img/newcol3.png" alt="photo1" class="picture">
+                        <div class="button">
+                            <a href="third_shop_card.html">
+                                <img src="./img/svg/open_shop_button3.svg" alt="btn3" class="open_shop_button3">
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="card-title">
+                        Свитшот Sweet Shot
+                    </h3>
+                    <p class="card-price">$129</p>
+                </li>
+            </ol>
+            <p id="counter"></p>
+            <script type="text/javascript">
+                const itemCount = document.querySelectorAll('.posts .post').length;
+                const counterEl = document.querySelector('#counter');
+                const counterEl2 = document.querySelector('#counter2');
+                counterEl.textContent = `Показано: ${itemCount} товаров из 12`;
+                counterEl2.textContent = `Показано: ${itemCount} товаров из 12`;
+                const observer = new MutationObserver(updateCounter);
+                // настраиваем наблюдение за изменениями в дереве DOM
+                const config = { childList: true, subtree: true };
+                observer.observe(postsEl, config);
+                // вызываем функцию при загрузке страницы, чтобы показать начальное количество элементов
+                updateCounter();
+                // добавляем обработчик на нажатие кнопок фильтра
+                const filterButtons = document.querySelectorAll('.filter-button');
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                    // получаем значение атрибута data-category кнопки фильтра
+                    const category = button.dataset.category;
+                    // обновляем счетчик элементов
+                    updateCounter();
+                    });
+                });
+            </script>
+        </div>
+        <div class="page_bar">
+            <input type="radio" id="first" name="pages" value="first" >
+            <input type="radio" id="second" name="pages" value="second" checked>
+            <ol class="page_filters">
+                <li>
+                <label for="first"><a href="shop.html" class="page_link">1</a></label>
+                </li>
+                <li>
+                <label for="second"><a href="shop2.html" class="page_link">2</a></label>
+                </li>
+            </ol>
+        </div>
+        <div id="zatemnenie">
+            <div id="okno">
+               <a href="#" class="close">X</a>
+              <h3>Заказать обратный звонок</h3>
+              <form class="form" action="">
+                <input id="firstName" type="text" placeholder="Имя">
+                <input id="email" type="email" placeholder="E-mail">
+                <input id="tel" type="text" placeholder="Телефон">
+                <button formnovalidate type="submit">Заказать звонок</button>
+              </form>
+            </div>
+          </div>
+<footer class="footer">
+    <div class="wrapper">
+        <div class="footer_wrapper">
+            <div class="footer_logo">
+                <a href="/" class="header_logo-link">
+                    <img src="./img/svg/logo.svg" alt="Home" class="header_logo-pic">
+                </a>
+            </div>
+            <nav class="footer_nav">
+                <ul class="footer_list">
+                    <li class="header_item">
+                        <a href="index.html" class="header_link">Главная</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="shop.html" class="second_header_link">Магазин</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="about_brand.html" class="header_link">О бренде</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="contacts.html" class="header_link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer_number">
+                <a href="#!" class="header_link">+7 (495) 823-54-12</a>
+            </div>
+        </div>
+        <div class="footer_contacts">
+                    hello@womazing.com
+        </div>
+        <div class="social_media_content">
+            <div class="first_column">
+                <ul class="first_column_list">
+                    <li>
+                        
+                    </li>
+                    <li>
+                        © Все права защищены
+                    </li>
+                    <li>
+                        <a href="" class="shop_categories_link">
+                            Политика конфедициальности
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="shop_categories_link">
+                            Публичная оферта
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="second_column">
+                <ul class="second_column_list">
+                    <li>
+                        <a href="" class="shop_categories_link">
+                            Пальто
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="shop_categories_link">
+                            Свитшоты
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="shop_categories_link">
+                            Кардиганы
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="shop_categories_link">
+                            Толстовки
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="third_column">
+                <ul class="social_media_icons">
+                    <li>
+                        <a href="/" class="footer_link">
+                            <img src="/img/svg/instagram.svg" alt="inst" class="instagram_logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="footer_link">
+                            <img src="/img/svg/facebook.svg" alt="face" class="facebook_logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="footer_link">
+                            <img src="/img/svg/twitter.svg" alt="twitter" class="twitter_logo">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="visamc_icons">
+                    <li>
+                        <img src="/img/svg/visa-mastercard.svg" alt="face" class="visamc_logo">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womazing</title>
+    <link rel="stylesheet" href="./css/shop_card_style.css">
+</head>
+<body>
+    <!--Header-->
+    <header class="header">
+        <div class="wrapper">
+            <div class="header_wrapper">
+                <div class="header_logo">
+                    <a href="/" class="header_logo-link">
+                        <img src="./img/svg/logo.svg" alt="Home" class="header_logo-pic">
+                    </a>
+                </div>
+                <nav class="header_nav">
+                    <ul class="header_list">
+                        <li class="header_item">
+                            <a href="index.html" class="header_link">Главная</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="shop.html" class="second_header_link">Магазин</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="about_brand.html" class="header_link">О бренде</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="contacts.html" class="header_link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="phone_logo">
+                    <a href="#zatemnenie" class="phone_logo-link">
+                        <img src="./img/svg/phone.svg" alt="Shop" class="phone_logo-pic">
+                    </a>
+                    +7 (495) 823-54-12
+                </div>
+                <div class="shop_logo">
+                    <a href="#!" class="shop_logo-link">
+                        <img src="./img/svg/bag.svg" alt="Shop" class="bag_logo-pic">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Main shop-->
+    <div class="shop_main">
+        <div class="title">
+            <h1 class="shop_title">
+                Футболка USA
+            </h1>
+            <p class="first_subtitle">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="shop.html">Магазин</a></li>
+                    <li class="current">Футболка USA</li>
+                  </ul>
+            </p>
+        </div>
+        <div class="main_card_pic">
+            <img src="img/newcol1.png" alt="photo1" class="main_photo">
+        </div>
+        <div class="info_choose_bar">
+            <p class="price">$311 <s class="lost_price">$450</s></p>
+            <p class="choose_size">Выберите размер</p>
+            <div class="size_bar">
+                <input type="radio" id="S" name="sizes" value="S">
+                <input type="radio" id="M" name="sizes" value="M" checked>
+                <input type="radio" id="L" name="sizes" value="L">
+                <input type="radio" id="XL" name="sizes" value="XL">
+                <input type="radio" id="XXL" name="sizes" value="XXL">
+                <ol class="size_filters">
+                    <li>
+                        <label for="S">S</label>
+                    </li>
+                    <li>
+                        <label for="M">M</label>
+                    </li>
+                    <li>
+                        <label for="L">L</label>
+                    </li>
+                    <li>
+                        <label for="XL">XL</label>
+                    </li>
+                    <li>
+                        <label for="XXL">XXL</label>
+                    </li>
+                </ol>
+            </div>
+            <p class="choose_size">Выберите цвет</p>
+            <div class="color_bar">
+                <input type="radio" id="brown" name="colors" value="brown">
+                <input type="radio" id="gray" name="colors" value="gray" checked>
+                <input type="radio" id="pink" name="colors" value="pink">
+                <input type="radio" id="orange" name="colors" value="orange">
+                <ol class="color_filters">
+                    <li>
+                        <label for="brown"></label>
+                    </li>
+                    <li>
+                        <label for="gray"></label>
+                    </li>
+                    <li>
+                        <label for="pink"></label>
+                    </li>
+                    <li>
+                        <label for="orange"></label>
+                    </li>
+                </ol>
+            </div>
+            <a href="#" class="go_to_shop">
+            <img src="img/svg/add_to_shop.svg" alt="btn1" class="to_shop_btn">
+            </a>
+        </div>
+        <div class="same_sale">
+            <h2 class="same_text">Связанные товары</h2>
+            <div class="same_pictures">
+                <div class="first_pic">
+                    <img src="img/newcol3.png" alt="photo1" class="first_picture">
+                    <div class="button">
+                        <a href="third_shop_card.html">
+                            <img src="./img/svg/open_shop_button3.svg" alt="btn3" class="open_shop_button3">
+                        </a>
+                    </div>
+                </div>
+                <div class="first_pic">
+                    <img src="img/newcol2.png" alt="photo1" class="first_picture">
+                    <div class="button">
+                        <a href="second_shop_card.html">
+                            <img src="./img/svg/open_shop_button3.svg" alt="btn3" class="open_shop_button3">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="same_name1">
+                <h4 class="first_name">Свитшот Sweet Shot</h4>
+                <h4 class="second_name1">Купальник Glow</h4>
+            </div>
+            <div class="same_price">
+                <h4 class="first_price">$129</h4>
+                <h4 class="second_price">$129</h4>
+            </div>
+        </div>
+        </div>
+        <div id="zatemnenie">
+            <div id="okno">
+               <a href="#" class="close">X</a>
+              <h3>Заказать обратный звонок</h3>
+              <form class="form" action="">
+                <input id="firstName" type="text" placeholder="Имя">
+                <input id="email" type="email" placeholder="E-mail">
+                <input id="tel" type="text" placeholder="Телефон">
+                <button formnovalidate type="submit">Заказать звонок</button>
+              </form>
+            </div>
+          </div>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="footer_wrapper">
+                    <div class="footer_logo">
+                        <a href="/" class="header_logo-link">
+                            <img src="./img/svg/logo.svg" alt="Home" class="header_logo-pic">
+                        </a>
+                    </div>
+                    <nav class="footer_nav">
+                        <ul class="footer_list">
+                            <li class="header_item">
+                                <a href="index.html" class="header_link">Главная</a>
+                            </li>
+                            <li class="header_item">
+                                <a href="shop.html" class="second_header_link">Магазин</a>
+                            </li>
+                            <li class="header_item">
+                                <a href="about_brand.html" class="header_link">О бренде</a>
+                            </li>
+                            <li class="header_item">
+                                <a href="contacts.html" class="header_link">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="footer_number">
+                        <a href="#!" class="header_link">+7 (495) 823-54-12</a>
+                    </div>
+                </div>
+                <div class="footer_contacts">
+                            hello@womazing.com
+                </div>
+                <div class="social_media_content">
+                    <div class="first_column">
+                        <ul class="first_column_list">
+                            <li>
+                                
+                            </li>
+                            <li>
+                                © Все права защищены
+                            </li>
+                            <li>
+                                <a href="" class="shop_categories_link">
+                                    Политика конфедициальности
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="shop_categories_link">
+                                    Публичная оферта
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="second_column">
+                        <ul class="second_column_list">
+                            <li>
+                                <a href="" class="shop_categories_link">
+                                    Пальто
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="shop_categories_link">
+                                    Свитшоты
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="shop_categories_link">
+                                    Кардиганы
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="shop_categories_link">
+                                    Толстовки
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="third_column">
+                        <ul class="social_media_icons">
+                            <li>
+                                <a href="/" class="footer_link">
+                                    <img src="/img/svg/instagram.svg" alt="inst" class="instagram_logo">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/" class="footer_link">
+                                    <img src="/img/svg/facebook.svg" alt="face" class="facebook_logo">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/" class="footer_link">
+                                    <img src="/img/svg/twitter.svg" alt="twitter" class="twitter_logo">
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="visamc_icons">
+                            <li>
+                                <img src="/img/svg/visa-mastercard.svg" alt="face" class="visamc_logo">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </body>
+        </html>
